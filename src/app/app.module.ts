@@ -1,3 +1,4 @@
+import { FormsModule } from '@angular/forms';
 import { InfoClientComponent } from './info-client/info-client.component';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
@@ -11,6 +12,7 @@ import { ClientListComponent } from './client-list/client-list.component';
 import { HomePageComponent } from './home-page/home-page.component';
 import { ContattiComponent } from './contatti/contatti.component';
 import { HttpClientModule} from '@angular/common/http';
+
 
 const routes =[
   {path:'client/home', component: HomePageComponent },
@@ -30,12 +32,14 @@ const routes =[
     AddClientComponent,
     ClientListComponent,
     HomePageComponent,
-    ContattiComponent
+    ContattiComponent,
+    InfoClientComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     NgbModule,
+    FormsModule,
     HttpClientModule,
     RouterModule.forRoot(routes)
   ],

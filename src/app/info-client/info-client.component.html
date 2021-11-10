@@ -1,22 +1,105 @@
 <div class="container-fluid ">
-  <h1 class = "text-center display-4 my-5">Info/Modifica Cliente</h1>
+
+<div class="row">
+
+  <div class="col-4 ">
+    <h1 class="my-5 display-4">Info Cliente</h1>
+    <ul class="list-group">
+      <li class="list-group-item">Nome: <span class="font-weight-bold">{{clientMod.nomeContatto}}</span></li>
+      <li class="list-group-item">Cognome: <span class="font-weight-bold">{{clientMod.cognomeContatto}}</span></li>
+      <li class="list-group-item">PEC: <span class="font-weight-bold">{{clientMod.email}}</span></li>
+      <li class="list-group-item">Raggione Sociale: <span class="font-weight-bold">{{clientMod.ragioneSociale}}</span></li>
+      <li class="list-group-item">Partita IVA: <span class="font-weight-bold">{{clientMod.partitaIva}}</span></li>
+      <li class="list-group-item">Tipo Cliente: <span class="font-weight-bold">{{clientMod.tipoCliente}}</span></li>
+      <li class="list-group-item">Nome Contatto: <span class="font-weight-bold">{{clientMod.nomeContatto}}</span></li>
+      <li class="list-group-item">Email Contatto: <span class="font-weight-bold">{{clientMod.emailContatto}}</span></li>
+      <li class="list-group-item">Provincia:</li>
+      <li class="list-group-item">Comune:</li>
+      <li class="list-group-item">Faturatto annuale:</li>
+    </ul>
+  </div>
+<!-- !!!!!!!!!!!!!!!!!!!!!!!!!!!!!! -->
+  <div class="col-8">
+    <h1 class = "text-center display-4 my-5">Info/Modifica Cliente</h1>
+
 
   <div class="d-flex justify-content-center">
-    <form class="w-50">
 
-      <div class="form-group">
-        <label for="exampleInputEmail1">Nome</label>
-        <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+
+    <form class="w-75 border bg-dark text-white p-5">
+      <div>
+
+        <div class="form-group ">
+          <label for="exampleInputText1">Nome</label>
+          <input [(ngModel)] = "clientMod.nomeContatto" name="nomeContatto" type="text" class="form-control" id="exampleInputText1" aria-describedby="emailHelp">
+        </div>
+
+        <div class="form-group">
+          <label for="exampleInputText2">Cognome</label>
+          <input [(ngModel)] = "clientMod.cognomeContatto" name="cognomeContatto" type="text" class="form-control" id="exampleInputText2">
+        </div>
+
+        <div class="form-group">
+          <label for="exampleInputText3">Email</label>
+          <input [(ngModel)] = "clientMod.email" name="email" type="text" class="form-control" id="exampleInputText3">
+        </div>
+
+        <div class="form-group">
+          <label for="exampleInputText4">Telefono</label>
+          <input [(ngModel)] = "clientMod.telefono" name="Telefono" type="text" class="form-control" id="exampleInputText4">
+        </div>
+
+        <div class="form-group">
+          <label for="exampleInputText5">Ragione Sociale</label>
+
+          <input [(ngModel)] = "clientMod.ragioneSociale" name="Ragione Sociale" type="text" class="form-control" id="exampleInputText5">
+        </div>
+
+        <div class="row">
+          <div class="col-6">
+            <div class="form-group">
+              <label class="text-white" for="exampleInputText5">PEC</label>
+              <input [(ngModel)] = "clientMod.pec" name = "pec" type="text" class="form-control" id="exampleInputText5">
+            </div>
+          </div>
+          <div class="col-6">
+            <div class="form-group">
+              <label class="text-white" for="exampleInputText5">Partita IVA</label>
+              <input [(ngModel)] = "clientMod.partitaIva" name = "partitaIva" type="text" class="form-control" id="exampleInputText5">
+            </div>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label class="text-white" for="exampleInputText6">Tipo Cliente</label>
+          <input [(ngModel)] = "clientMod.tipoCliente" name = "tipoCliente" type="text" class="form-control" id="exampleInputText6">
+        </div>
+
+        <div class="row">
+          <div class="col-6">
+            <div class="form-group">
+              <label class="text-white" for="exampleInputText7">Telefono Contatto</label>
+              <input [(ngModel)] = "clientMod.telefonoContatto" name = "telefonoContatto" type="text" class="form-control" id="exampleInputText7">
+            </div>
+          </div>
+          <div class="col-6">
+            <div class="form-group">
+              <label class="text-white" for="exampleInputText8">Email Contatto</label>
+              <input [(ngModel)] = "clientMod.emailContatto" name = "emailContatto" type="text" class="form-control" id="exampleInputText8">
+            </div>
+          </div>
+        </div>
+
+        <button class="btn btn-primary" (click) = "updateUser()">Modifica</button>
       </div>
-
-      <div class="form-group">
-        <label for="exampleInputPassword1">Cognome</label>
-        <input type="text" class="form-control" id="exampleInputPassword1">
-      </div>
-
-      <button  class="btn btn-primary">Submit</button>
     </form>
+
   </div>
+  </div>
+</div>
+
+
+
 
 
 
