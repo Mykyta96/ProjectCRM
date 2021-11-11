@@ -1,0 +1,96 @@
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-4">
+      <h1 class="display-4 text-center my-5"> Aggiungi fattura</h1>
+      <form class="border p-3 bg-dark text-white">
+        <h3 class="text-center">Dati Cliente</h3>
+        <div class="form-group">
+          <label for="nome">Nome Contatto</label>
+          <input [(ngModel)] = "newFattura.cliente.nomeContatto"  name = "nome" type="text" class="form-control" id="nome">
+        </div>
+        <div class="form-group">
+          <label for="nome">Raggione Sociale</label>
+          <input [(ngModel)] = "newFattura.cliente.ragioneSociale"  name = "nome2" type="text" class="form-control" id="nome">
+        </div>
+        <div class="form-group">
+          <label for="nome">Partita IVA</label>
+          <input  [(ngModel)] = "newFattura.cliente.partitaIva" name = "nome3" type="text" class="form-control" id="nome">
+        </div>
+        <div class="form-group">
+          <label for="nome">Email</label>
+          <input [(ngModel)] = "newFattura.cliente.email"  name = "nome4" type="text" class="form-control" id="nome">
+        </div>
+        <div class="form-group">
+          <label for="nome">PEC</label>
+          <input [(ngModel)] = "newFattura.cliente.pec"  name = "nome5" type="text" class="form-control" id="nome">
+        </div>
+        <h3 class="text-center">Dati Fattura</h3>
+        <div class="form-group">
+          <label for="nome">Data</label>
+          <input [(ngModel)] = "newFattura.data"  name = "nome6" type="text" class="form-control" id="nome">
+        </div>
+        <div class="form-group">
+          <label class="text-white" for="">Stato Fattura<span class="text-danger m-0"> *</span></label>
+          <select class="form-control" [(ngModel)] = "newFattura.stato.nome" name="StatoFattura" required>
+            <option>PAGATA</option>
+            <option>NON PAGATA</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="nome">Numero</label>
+          <input [(ngModel)] = "newFattura.numero" name = "nome7" type="text" class="form-control" id="nome">
+        </div>
+        <div class="form-group">
+          <label for="nome">Anno</label>
+          <input [(ngModel)] = "newFattura.anno" name = "nome8" type="text" class="form-control" id="nome">
+        </div>
+        <div class="form-group">
+          <label for="nome">Importo</label>
+          <input [(ngModel)] = "newFattura.importo" name = "nome9" type="text" class="form-control" id="nome">
+        </div>
+        <!-- <div class="form-group">
+          <label for="nome">Data</label>
+          <input  name = "nome6" type="text" class="form-control" id="nome">
+        </div>  SELECT!!!!!!!!!-->
+        <button class="btn btn-success" (click)="createFatture()">Aggiungi</button>
+      </form>
+
+    </div>
+
+    <div class="col-8">
+      <h1 class="display-4 text-center my-5">Lista completta della fatture</h1>
+
+<table class="table table-striped">
+  <thead>
+  <tr>
+    <th scope="col">#</th>
+    <th scope="col">Nome</th>
+    <th scope="col">Anno fattura</th>
+    <th scope="col">Importo</th>
+    <th scope="col">Stato della fattura</th>
+    <th scope="col"></th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr *ngFor = "let fatture of fattureList">
+
+    <th scope="row">{{ fatture.id }}</th>
+    <td>{{ fatture.cliente.nomeContatto }}</td>
+    <td>{{ fatture.anno }}</td>
+    <td>{{ fatture.importo }}€</td>
+    <td>{{ fatture.stato.nome}}</td>
+    <td><button class="btn btn-sm btn-success" (click) = "selectFatture(fatture)">Info</button></td>
+    <td><button class = "btn btn-danger btn-sm" (click) = "removeFattura(fatture.id)">Elimina</button></td>
+  </tr>
+  </tbody>
+</table>
+
+<!-- <div class="d-flex justify-content-between p-2">
+  <ngb-pagination [collectionSize]="collectionSize" [(page)]="page" [pageSize]="pageSize" (pageChange)="refreshCountries()">
+
+  </ngb-pagination>
+  </div>
+    </div>
+  </div>
+
+</div> -->

@@ -1,0 +1,50 @@
+<div class="container-fluid">
+  <h1 class="display-4 text-center my-5">Informazione della fattura numero<span class="font-weight-bold"> {{fatturaInfo.numero}}</span> </h1>
+
+    <ul class="list-group  text-white">
+      <li class="list-group-item bg-info text-center"><h4><span class="font-weight-bold ">INFO CLIENTE</span></h4></li>
+      <li class="list-group-item bg-dark"><p><span class="font-weight-bold">Nome: </span>{{fatturaInfo.cliente.nomeContatto}}</p></li>
+      <li class="list-group-item bg-dark"><p><span class="font-weight-bold">Cognome: </span>{{fatturaInfo.cliente.cognomeContatto}}</p></li>
+      <li class="list-group-item bg-dark"><p><span class="font-weight-bold">Email: </span>{{fatturaInfo.cliente.email}}</p></li>
+      <li class="list-group-item bg-dark"><p><span class="font-weight-bold">Telefono: </span>{{fatturaInfo.cliente.telefono}}</p></li>
+      <li class="list-group-item bg-dark"><p><span class="font-weight-bold">PEC: </span>{{fatturaInfo.cliente.pec}}</p></li>
+      <li class="list-group-item bg-dark"> <p><span class="font-weight-bold">Ragione Sociale: </span>{{fatturaInfo.cliente.ragioneSociale}}</p></li>
+      <li class="list-group-item bg-dark"> <p><span class="font-weight-bold">Tipo Cliente: </span>{{fatturaInfo.cliente.tipoCliente}}</p></li>
+      <li class="list-group-item bg-dark"><p><span class="font-weight-bold">Telefono Contatto: </span>{{fatturaInfo.cliente.telefonoContatto}}</p></li>
+      <li class="list-group-item bg-dark"><p><span class="font-weight-bold">Email Contatto: </span>{{fatturaInfo.cliente.emailContatto}}</p></li>
+      <li class="list-group-item bg-info text-center"><h4><span class="font-weight-bold ">INFO FATTURA</span></h4></li>
+      <li class="list-group-item bg-dark"><p><span class="font-weight-bold">Numero: </span>{{fatturaInfo.numero}}</p></li>
+      <li class="list-group-item bg-dark"><p><span class="font-weight-bold">Data: </span>{{fatturaInfo.data}}</p></li>
+      <li class="list-group-item bg-dark"><p><span class="font-weight-bold">Anno: </span>{{fatturaInfo.anno}}</p></li>
+      <li class="list-group-item bg-dark"><p><span class="font-weight-bold">Importo: </span>{{fatturaInfo.importo}} </p></li>
+      <li class="list-group-item bg-dark"><p><span class="font-weight-bold">Stato: </span>{{fatturaInfo.stato.nome}}</p></li>
+      <li class="list-group-item bg-info text-center"><h4><span class="font-weight-bold ">*Indirizzo Sede Operativa*</span></h4></li>
+      <li class="list-group-item bg-dark"><p><span class="font-weight-bold">Via: </span>{{fatturaInfo.cliente.indirizzoSedeOperativa.via}}</p></li>
+      <li class="list-group-item bg-dark"><p><span class="font-weight-bold">Civico: </span>{{fatturaInfo.cliente.indirizzoSedeOperativa.civico}}</p></li>
+      <li class="list-group-item bg-dark"><p><span class="font-weight-bold">CAP: </span>{{fatturaInfo.cliente.indirizzoSedeOperativa.cap}}</p></li>
+      <li class="list-group-item bg-dark"><p><span class="font-weight-bold">Localita: </span>{{fatturaInfo.cliente.indirizzoSedeOperativa.localita}}</p></li>
+      <li class="list-group-item bg-dark"><p><span class="font-weight-bold">Comune: </span>{{fatturaInfo.cliente.indirizzoSedeOperativa.comune.nome}}</p></li>
+      <li class="list-group-item bg-dark"><p><span class="font-weight-bold">Provincia: </span>{{fatturaInfo.cliente.indirizzoSedeOperativa.comune.provincia.nome}}</p></li>
+      <li class="list-group-item bg-dark"><p><span class="font-weight-bold">Sigla: </span>{{fatturaInfo.cliente.indirizzoSedeOperativa.comune.provincia.sigla}}</p></li>
+      <li class="list-group-item bg-info text-center"><h4><span class="font-weight-bold ">*Indirizzo Sede Legale*</span></h4></li>
+      <li class="list-group-item bg-dark"><p><span class="font-weight-bold">Via: </span>{{fatturaInfo.cliente.indirizzoSedeLegale.via}}</p></li>
+      <li class="list-group-item bg-dark"><p><span class="font-weight-bold">Civico: </span>{{fatturaInfo.cliente.indirizzoSedeLegale.civico}}</p></li>
+      <li class="list-group-item bg-dark"><p><span class="font-weight-bold">CAP: </span>{{fatturaInfo.cliente.indirizzoSedeLegale.cap}}</p></li>
+      <li class="list-group-item bg-dark"><p><span class="font-weight-bold">Localita: </span>{{fatturaInfo.cliente.indirizzoSedeLegale.localita}}</p></li>
+      <li class="list-group-item bg-dark"><p><span class="font-weight-bold">Comune: </span>{{fatturaInfo.cliente.indirizzoSedeLegale.comune.nome}}</p></li>
+      <li class="list-group-item bg-dark"><p><span class="font-weight-bold">Provincia: </span>{{fatturaInfo.cliente.indirizzoSedeLegale.comune.provincia.nome}}</p></li>
+      <li class="list-group-item bg-dark"><p><span class="font-weight-bold">Sigla: </span>{{fatturaInfo.cliente.indirizzoSedeLegale.comune.provincia.sigla}}</p></li>
+      <li class="list-group-item bg-info text-center"><h4><span class="font-weight-bold ">*INFO VARIE*</span></h4></li>
+      <li class="list-group-item bg-dark"><p><span class="font-weight-bold">Data Inserimento: </span>{{fatturaInfo.cliente.dataInserimento}}</p></li>
+      <li class="list-group-item bg-dark"><p><span class="font-weight-bold">Data Ultimo Inserimento: </span>{{fatturaInfo.cliente.dataUltimoContatto}}</p></li>
+      <li class="list-group-item bg-dark"><p><span class="font-weight-bold">Fatturato annuale: </span>{{fatturaInfo.cliente.fatturatoAnnuale}}</p></li>
+
+    </ul>
+
+
+
+</div>
+
+
+
+

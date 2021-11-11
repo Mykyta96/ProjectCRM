@@ -23,7 +23,7 @@ export class ClientListComponent implements OnInit {
   }
 
 
-  removeUser(id: any){
+  removeClient(id: any){
     this.clientiService.removeClient(id).subscribe(response => {
       this.clientList = this.clientList.filter(elem => elem.id != id)
       console.log(response);

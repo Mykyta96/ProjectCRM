@@ -1,32 +1,46 @@
-<div class="container-fluid ">
+<div class="container-fluid">
 
 <div class="row">
 
-  <div class="col-4 ">
-    <h1 class="my-5 display-4">Info Cliente</h1>
+  <div class="col-lg-4 ">
+    <h1 class="my-5 display-4 text-center  border-bottom p-2">Info Cliente</h1>
     <ul class="list-group">
+      <li class="list-group-item text-center bg-dark text-white"><span class="font-weight-bold ">*Informazioni Principali*</span></li>
       <li class="list-group-item">Nome: <span class="font-weight-bold">{{clientMod.nomeContatto}}</span></li>
       <li class="list-group-item">Cognome: <span class="font-weight-bold">{{clientMod.cognomeContatto}}</span></li>
       <li class="list-group-item">PEC: <span class="font-weight-bold">{{clientMod.email}}</span></li>
       <li class="list-group-item">Raggione Sociale: <span class="font-weight-bold">{{clientMod.ragioneSociale}}</span></li>
+      <li class="list-group-item">Fatturato annuale: <span class="font-weight-bold">{{clientMod.fatturatoAnnuale}} €</span></li>
       <li class="list-group-item">Partita IVA: <span class="font-weight-bold">{{clientMod.partitaIva}}</span></li>
       <li class="list-group-item">Tipo Cliente: <span class="font-weight-bold">{{clientMod.tipoCliente}}</span></li>
-      <li class="list-group-item">Nome Contatto: <span class="font-weight-bold">{{clientMod.nomeContatto}}</span></li>
       <li class="list-group-item">Email Contatto: <span class="font-weight-bold">{{clientMod.emailContatto}}</span></li>
-      <li class="list-group-item">Provincia:</li>
-      <li class="list-group-item">Comune:</li>
+      <li class="list-group-item text-center bg-dark text-white"><span class="font-weight-bold ">*Indirizzo Sede Operativa*</span></li>
+      <li class="list-group-item">Provincia: <span class="font-weight-bold">{{clientMod.indirizzoSedeOperativa.comune.provincia.nome}}</span></li>
+      <li class="list-group-item">Sigla: <span class="font-weight-bold">{{clientMod.indirizzoSedeOperativa.comune.provincia.sigla}}</span></li>
+      <li class="list-group-item">Comune: <span class="font-weight-bold">{{clientMod.indirizzoSedeOperativa.comune.nome}}</span></li>
+      <li class="list-group-item">Via: <span class="font-weight-bold">{{clientMod.indirizzoSedeOperativa.via}}</span></li>
+      <li class="list-group-item text-center bg-dark text-white"><span class="font-weight-bold ">*Indirizzo Sede Legale*</span></li>
+      <li class="list-group-item">Provincia: <span class="font-weight-bold">{{clientMod.indirizzoSedeLegale.comune.provincia.nome}}</span></li>
+      <li class="list-group-item">Sigla: <span class="font-weight-bold">{{clientMod.indirizzoSedeLegale.comune.provincia.sigla}}</span></li>
+      <li class="list-group-item">Comune: <span class="font-weight-bold">{{clientMod.indirizzoSedeLegale.comune.nome}}</span></li>
+      <li class="list-group-item">Via: <span class="font-weight-bold">{{clientMod.indirizzoSedeLegale.via}}</span></li>
+      <li class="list-group-item text-center bg-dark text-white"><span class="font-weight-bold ">*Data Inserimento*</span></li>
+      <li class="list-group-item">Data: <span class="font-weight-bold">{{clientMod.dataInserimento}}</span></li>
+      <li class="list-group-item text-center bg-dark text-white"><span class="font-weight-bold ">*Data Ultimo Contatto*</span></li>
+      <li class="list-group-item">Data: <span class="font-weight-bold">{{clientMod.dataUltimoContatto}}</span></li>
       <li class="list-group-item">Faturatto annuale:</li>
+
     </ul>
   </div>
 <!-- !!!!!!!!!!!!!!!!!!!!!!!!!!!!!! -->
-  <div class="col-8">
-    <h1 class = "text-center display-4 my-5">Info/Modifica Cliente</h1>
+  <div class="col-lg-8">
+    <h1 class = "text-center display-4 my-5 border-bottom p-2">Modifica Cliente</h1>
 
 
   <div class="d-flex justify-content-center">
 
 
-    <form class="w-75 border bg-dark text-white p-5">
+    <form class="w-100 border bg-dark text-white p-5">
       <div>
 
         <div class="form-group ">
@@ -70,9 +84,17 @@
           </div>
         </div>
 
-        <div class="form-group">
+        <!-- <div class="form-group">
           <label class="text-white" for="exampleInputText6">Tipo Cliente</label>
           <input [(ngModel)] = "clientMod.tipoCliente" name = "tipoCliente" type="text" class="form-control" id="exampleInputText6">
+        </div> -->
+
+        <div class="form-group">
+          <label class="text-white" for="">Tipo Cliente<span class="text-danger m-0"> *</span></label>
+          <select class="form-control" [(ngModel)] = "clientMod.tipoCliente" id="exampleInputText7" name="tipoCliente" >
+            <option >Tipo Cliente</option>
+            <option [ngValue] = "item" *ngFor = "let item of tipoClient">{{item}}</option>
+          </select>
         </div>
 
         <div class="row">
@@ -90,7 +112,171 @@
           </div>
         </div>
 
-        <button class="btn btn-primary" (click) = "updateUser()">Modifica</button>
+        <h3 class="text-white text-center my-3">Indirizzo Sede Operativa</h3>
+
+        <div class="row">
+          <div class="col-6">
+            <div class="form-group">
+              <label class="text-white" for="exampleInputText9">Via</label>
+              <input [(ngModel)] = "clientMod.indirizzoSedeOperativa.via" name = "via" type="text" class="form-control" id="exampleInputText9">
+            </div>
+          </div>
+          <div class="col-6">
+            <div class="form-group">
+              <label class="text-white" for="exampleInputText9">Civico</label>
+              <input [(ngModel)] = "clientMod.indirizzoSedeOperativa.civico" name = "civico" type="text" class="form-control" id="exampleInputText9">
+            </div>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-6">
+            <div class="form-group">
+              <label class="text-white" for="exampleInputText10">CAP</label>
+              <input [(ngModel)] = "clientMod.indirizzoSedeOperativa.cap" name = "cap" type="text" class="form-control" id="exampleInputText10">
+            </div>
+          </div>
+          <div class="col-6">
+            <div class="form-group">
+              <label class="text-white" for="exampleInputText11">Localita</label>
+              <input [(ngModel)] = "clientMod.indirizzoSedeOperativa.localita" name = "localita" type="text" class="form-control" id="exampleInputText11">
+            </div>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-4">
+            <!-- <div class="form-group">
+              <label class="text-white" for="exampleInputText12">Comune</label>
+              <input [(ngModel)] = "clientMod.indirizzoSedeOperativa.comune.nome" name = "nome" type="text" class="form-control" id="exampleInputText12">
+            </div> -->
+            <div class="form-group">
+              <label class="text-white" for="">Comune</label>
+              <select class="form-control" [(ngModel)] = "clientMod.indirizzoSedeOperativa.comune" name="indirizioOperativoComune">
+                <option selected ></option>
+                <option [ngValue] = "item" *ngFor = "let item of comune">{{item.nome}}</option>
+              </select>
+            </div>
+
+
+
+
+          </div>
+
+          <div class="col-4">
+            <div class="form-group">
+              <label class="text-white" for="exampleInputText27">Sigla</label>
+              <input [(ngModel)] = "clientMod.indirizzoSedeOperativa.comune.provincia.sigla" name = "nomeSigla1" type="text" class="form-control" id="exampleInputText27">
+            </div>
+          </div>
+          <div class="col-4">
+            <div class="form-group">
+              <label class="text-white" for="exampleInputText13">Provincia</label>
+              <input [(ngModel)] = "clientMod.indirizzoSedeOperativa.comune.provincia.nome" name = "prov1" type="text" class="form-control" id="exampleInputText13">
+            </div>
+            <!-- <div class="form-group">
+              <label class="text-white" for="">Province</label>
+              <select class="form-control" [(ngModel)] = "clientMod.indirizzoSedeOperativa.comune.provincia" name="indirizioOperativoProvince">
+                <option >Scegli comune</option>
+                <option [ngValue] = "item" *ngFor = "let item of province">{{item.nome}}</option>
+              </select>
+            </div> -->
+
+          </div>
+        </div>
+
+        <h3 class="text-white text-center my-3">Indirizzo Sede Legale</h3>
+
+
+        <div class="row">
+          <div class="col-6">
+            <div class="form-group">
+              <label class="text-white" for="exampleInputText14">Via</label>
+              <input [(ngModel)] = "clientMod.indirizzoSedeLegale.via" name = "viaLegale" type="text" class="form-control" id="exampleInputText14">
+            </div>
+          </div>
+          <div class="col-6">
+            <div class="form-group">
+              <label class="text-white" for="exampleInputText15">Civico</label>
+              <input [(ngModel)] = "clientMod.indirizzoSedeLegale.civico" name = "civico" type="text" class="form-control" id="exampleInputText15">
+            </div>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-6">
+            <div class="form-group">
+              <label class="text-white" for="exampleInputText16">CAP</label>
+              <input [(ngModel)] = "clientMod.indirizzoSedeLegale.cap" name = "cap" type="text" class="form-control" id="exampleInputText16">
+            </div>
+          </div>
+          <div class="col-6">
+            <div class="form-group">
+              <label class="text-white" for="exampleInputText17">Localita</label>
+              <input [(ngModel)] = "clientMod.indirizzoSedeLegale.localita" name = "localita" type="text" class="form-control" id="exampleInputText17">
+            </div>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-4">
+            <!-- <div class="form-group">
+              <label class="text-white" for="exampleInputText18">Comune</label>
+              <input [(ngModel)] = "clientMod.indirizzoSedeLegale.comune.nome" name = "nome" type="text" class="form-control" id="exampleInputText18">
+            </div> -->
+            <div class="form-group">
+              <label class="text-white" for="">Comune</label>
+              <select class="form-control" [(ngModel)] = "clientMod.indirizzoSedeLegale.comune" name="indirizioLegaleComune">
+                <option active>Scegli comune</option>
+                <option [ngValue] = "item" *ngFor = "let item of comune">{{item.nome}}</option>
+              </select>
+            </div>
+
+
+
+
+          </div>
+          <div class="col-4">
+            <div class="form-group">
+              <label class="text-white" for="exampleInputText26">Sigla</label>
+              <input [(ngModel)] = "clientMod.indirizzoSedeLegale.comune.provincia.sigla" name = "nomeSigla2" type="text" class="form-control" id="exampleInputText26">
+            </div>
+          </div>
+          <div class="col-4">
+            <div class="form-group">
+              <label class="text-white" for="exampleInputText19">Provincia</label>
+              <input [(ngModel)] = "clientMod.indirizzoSedeLegale.comune.provincia.nome" name = "prov2" type="text" class="form-control" id="exampleInputText19">
+            </div>
+            <!-- <div class="form-group">
+              <label class="text-white" for="">Province</label>
+              <select class="form-control" [(ngModel)] = "clientMod.indirizzoSedeLegale.comune" name="indirizioLegaleProvince">
+                <option>Scegli Provincia</option>
+                <option [ngValue] = "item" *ngFor = "let item of province">{{item.nome}}</option>
+              </select>
+            </div> -->
+
+          </div>
+        </div>
+
+        <!-- <div class="row">
+          <div class="col-6">
+            <div class="form-group">
+              <label class="text-white" for="exampleInputText120">Data Inserimento</label>
+              <input [(ngModel)] = "clientMod.dataInserimento" name = "nomeComune" type="text" class="form-control" id="exampleInputText20">
+            </div>
+          </div>
+
+          <div class="col-6">
+            <div class="form-group">
+              <label class="text-white" for="exampleInputText21">Data Ultimo Contatto</label>
+              <input [(ngModel)] = "clientMod.dataUltimoContatto" name = "nomeProvincia" type="text" class="form-control" id="exampleInputText21">
+            </div>
+          </div>
+        </div> -->
+
+
+
+        <button class="btn btn-success" (click) = "updateUser()">Modifica</button>
       </div>
     </form>
 

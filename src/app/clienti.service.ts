@@ -28,6 +28,10 @@ export class ClientiService {
     return this.http.get<Content>(this.urlApi, {headers: this.headers});
   }
 
+  getTipoClient(){
+    return this.http.get<string[]>(`${environment.urlApi}/api/clienti/tipicliente`, {headers: this.headers})
+  }
+
   getClient(id: string){
     return this.http.get<Clients>(`${environment.urlApi}/api/clienti/${id}`, {headers: this.headers});
   }
