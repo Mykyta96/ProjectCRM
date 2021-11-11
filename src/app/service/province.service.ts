@@ -1,8 +1,8 @@
-import { Content } from '../content';
+import { Content } from '../interface/content';
 import { environment } from '../../environments/environment';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Clients } from '../clients';
+import { Clients } from '../interface/clients';
 
 @Injectable({
   providedIn: 'root'

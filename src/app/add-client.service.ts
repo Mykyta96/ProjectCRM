@@ -1,5 +1,5 @@
-import { Clients } from './clients';
-import { Content } from './content';
+import { Clients } from './interface/clients';
+import { Content } from './interface/content';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { environment } from 'src/environments/environment';

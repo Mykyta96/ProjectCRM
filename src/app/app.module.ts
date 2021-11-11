@@ -14,17 +14,21 @@ import { ContattiComponent } from './contatti/contatti.component';
 import { HttpClientModule} from '@angular/common/http';
 import { FatureComponent } from './fature/fature.component';
 import { InfoFattureComponent } from './info-fatture/info-fatture.component';
+import { LoginComponent } from './login/login.component';
+import { RouteGuardService } from './service/route-guard.service';
+import { FooterComponent } from './footer/footer.component';
 
 
 const routes =[
-  {path:'client/home', component: HomePageComponent },
-  {path: '', pathMatch: 'full', redirectTo: 'login'},
-  {path:'client/list', component: ClientListComponent },
-  {path:'client/add', component: AddClientComponent },
-  {path:'client/fature', component: FatureComponent },
-  {path:'client/:id/fature', component: InfoFattureComponent },
-  {path:'client/:id/info', component: InfoClientComponent },
-  {path:'client/contatti', component: ContattiComponent },
+  {path:'client/home', component: HomePageComponent, canActivate: [RouteGuardService] },
+  {path: '', pathMatch: 'full', redirectTo: 'login', },
+  {path:'client/list', component: ClientListComponent, canActivate: [RouteGuardService] },
+  {path:'client/add', component: AddClientComponent, canActivate: [RouteGuardService] },
+  {path:'client/fature', component: FatureComponent, canActivate: [RouteGuardService] },
+  {path:'client/:id/fature', component: InfoFattureComponent, canActivate: [RouteGuardService] },
+  {path:'client/:id/info', component: InfoClientComponent, canActivate: [RouteGuardService] },
+  {path:'client/contatti', component: ContattiComponent,canActivate: [RouteGuardService] },
+  {path: 'login', component: LoginComponent}
 
   // {path: 'login', component: LoginAdminComponent}
 
@@ -40,7 +44,9 @@ const routes =[
     ContattiComponent,
     InfoClientComponent,
     FatureComponent,
-    InfoFattureComponent
+    InfoFattureComponent,
+    LoginComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,

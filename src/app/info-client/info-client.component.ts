@@ -1,7 +1,7 @@
-import { Clients } from './../clients';
+import { Clients } from '../interface/clients';
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
-import { ClientiService } from './../clienti.service';
+import { ClientiService } from '../service/clienti.service';
 import { ComuneService } from '../service/comune.service';
 import { IComuni } from '../interface/icomuni';
 import { Province } from '../interface/province';

@@ -1,8 +1,8 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
-import { ClientiService } from '../clienti.service';
-import { Clients } from '../clients';
+import { ClientiService } from '../service/clienti.service';
+import { Clients } from '../interface/clients';
 import { IComuni } from '../interface/icomuni';
 import { Province } from '../interface/province';
 import { ComuneService } from '../service/comune.service';

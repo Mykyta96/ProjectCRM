@@ -4,39 +4,45 @@
   <div class="row">
 
 
-    <div class="col-12">
-      <div class = "mt-5">
-        <h3 class="my-3">All client list</h3>
 
-       <table class="table table-striped">
-         <thead>
-         <tr>
-           <th scope="col">#</th>
-           <th scope="col">Nome</th>
-           <th scope="col">Cognome</th>
-           <th scope="col">Email</th>
-           <th scope="col">Telefono</th>
-           <th scope="col">Raggione Sociale</th>
-           <th></th>
-         </tr>
-         </thead>
-         <tbody>
-         <tr *ngFor = "let client of clientList; index as i">
-           <th scope="row">{{ i + 1 }}</th>
-           <td > {{ client.nomeContatto }}</td>
-           <td>{{ client.cognomeContatto }}</td>
-           <td>{{ client.email }}</td>
-           <td>{{ client.telefono}}</td>
-           <td>{{ client.ragioneSociale }}</td>
+      <div class="col-12">
+        <div class = "mt-5">
+          <h3 class="my-3">All client list</h3>
 
-           <td>
-             <button class = "btn btn-info btn-sm mr-3" (click) = "selectUser(client)">Info</button>
-             <button class = "btn btn-danger btn-sm" (click) = "removeClient(client.id)">Elimina</button>
-          </td>
-         </tr>
-         </tbody>
-       </table>
-       </div>
-    </div>
+         <table class="table table-striped">
+           <thead>
+           <tr>
+             <th scope="col">#</th>
+             <th scope="col">Nome</th>
+             <th scope="col">Cognome</th>
+             <th scope="col">Email</th>
+             <th scope="col">Telefono</th>
+             <th scope="col">Raggione Sociale</th>
+             <th></th>
+           </tr>
+           </thead>
+           <tbody>
+           <tr *ngFor = "let client of clientList; index as i">
+             <th scope="row">{{ i + 1 }}</th>
+             <td > {{ client.nomeContatto }}</td>
+             <td>{{ client.cognomeContatto }}</td>
+             <td>{{ client.email }}</td>
+             <td>{{ client.telefono}}</td>
+             <td>{{ client.ragioneSociale }}</td>
+
+             <td>
+               <button class = "btn btn-info btn-sm mr-3" (click) = "selectUser(client)">Info</button>
+               <button class = "btn btn-danger btn-sm" (click) = "removeClient(client.id)">Elimina</button>
+            </td>
+           </tr>
+           </tbody>
+         </table>
+         </div>
+      </div>
+
+
+
+
+
   </div>
 </div>

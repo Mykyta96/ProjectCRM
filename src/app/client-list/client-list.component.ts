@@ -1,6 +1,6 @@
-import { ClientiService } from './../clienti.service';
+import { ClientiService } from '../service/clienti.service';
 import { Component, Input, OnInit } from '@angular/core';
-import { Clients } from '../clients';
+import { Clients } from '../interface/clients';
 import { Router } from '@angular/router';
 
 
@@ -15,6 +15,8 @@ export class ClientListComponent implements OnInit {
 
 
   clientList: Clients[] = [];
+
+
 
   constructor(private router: Router, private clientiService: ClientiService) { }
 

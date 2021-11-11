@@ -2,7 +2,7 @@ import { Fature } from './../interface/fature';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { environment } from 'src/environments/environment';
-import { Content } from '../content';
+import { Content } from '../interface/content';
 
 @Injectable({
   providedIn: 'root'

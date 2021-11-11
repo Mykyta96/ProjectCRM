@@ -1,0 +1,19 @@
+<div class="container  my-5">
+  <div class="card w-50 p-3 m-auto text-center">
+    <form class="form-signin">
+      <h2 class="display-4 text-primary ">CRM NIKITA</h2>
+      <h1 class="h3 mb-3 font-weight-normal">Please sign in</h1>
+      <label for="inputEmail" class="sr-only">Email address</label>
+      <input type="email" name="loginEmail" [(ngModel)]="loginEmail" id="inputEmail" class="form-control mb-4" placeholder="Email address" required autofocus>
+      <label for="inputPassword" class="sr-only">Password</label>
+      <input type="password" name="loginPassword" [(ngModel)]="loginPassword" id="inputPassword" class="form-control mb-4" placeholder="Password" required>
+      <div class="checkbox mb-3">
+        <label>
+          <input type="checkbox" value="remember-me"> Remember me
+        </label>
+      </div>
+      <button class="btn btn-lg btn-primary btn-block" (click)="signin()">Sign in</button>
+      <p class="mt-5 mb-3 text-muted">&copy; 2017-2021</p>
+    </form>
+  </div>
+</div>
