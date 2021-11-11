@@ -16,6 +16,10 @@ export class InfoFattureComponent implements OnInit {
   constructor(private fatureService: FatureService, private router: Router, private route: ActivatedRoute) { }
 
 
+    /*
+      SU QUESTA PAGGINA STIAMO PASSANDO PARAMETRI DI UN CLIENTE PER ID, IN QUESTO MODO GLI POSSIAMO FAR USCIRE SULLA PAGGINA E GESTIRE I DATI
+    */
+
 
   ngOnInit(): void {
     this.route.params.subscribe(params => {

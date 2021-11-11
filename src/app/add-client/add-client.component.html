@@ -39,9 +39,13 @@
 
   <h1 class="display-4 text-center my-5 border-bottom p-2">Aggiungi cliente</h1>
 
+
     <p><span class="text-danger m-0">* </span>- Campi obligatori</p>
 
-      <div class="d-flex justify-content-center  ">
+      <div class="d-flex justify-content-center">
+
+        <!-- PARTE DA QUI -->
+
         <form class="w-100 border p-5  bg-dark">
           <div class="form-group ">
             <label class="text-white" for="exampleInputText">Nome <span class="text-danger m-0"> *</span></label>
@@ -69,44 +73,11 @@
             <input [(ngModel)] = "newClient.ragioneSociale" name = "ragioneSociale" type="text" class="form-control" id="exampleInputText4" placeholder="Raggione Sociale...">
           </div>
 
-          <!-- PARTE DA QUI -->
 
-          <!-- <div class="row">
-            <div class="col-6">
-              <div class="form-group">
-                <label class="text-white" for="exampleInputText5">PEC</label>
-                <input [(ngModel)] = "newClient.pec" name = "pec" type="text" class="form-control" id="exampleInputText5">
-              </div>
-            </div>
-            <div class="col-6">
-              <div class="form-group">
-                <label class="text-white" for="exampleInputText5">Partita IVA</label>
-                <input [(ngModel)] = "newClient.partitaIva" name = "partitaIva" type="text" class="form-control" id="exampleInputText5">
-              </div>
-            </div>
-          </div>
 
-          <div class="form-group">
-            <label class="text-white" for="exampleInputText6">Tipo Cliente</label>
-            <input [(ngModel)] = "newClient.tipoCliente" name = "tipoCliente" type="text" class="form-control" id="exampleInputText6">
-          </div>
 
-          <div class="row">
-            <div class="col-6">
-              <div class="form-group">
-                <label class="text-white" for="exampleInputText7">Telefono Contatto</label>
-                <input [(ngModel)] = "newClient.telefonoContatto" name = "telefonoContatto" type="text" class="form-control" id="exampleInputText7">
-              </div>
-            </div>
-            <div class="col-6">
-              <div class="form-group">
-                <label class="text-white" for="exampleInputText8">Email Contatto</label>
-                <input [(ngModel)] = "newClient.emailContatto" name = "emailContatto" type="text" class="form-control" id="exampleInputText8">
-              </div>
-            </div>
-          </div> -->
 
-          <!-- PROVA COPIA DELL FORM INFOOOOOO!!!!!!!!!!!!!!!!!!!!!!!!!!! -->
+
 
           <div class="row">
             <div class="col-6">
@@ -305,6 +276,8 @@
           <button type="button" class="btn btn-info" (click) = "create()">Aggiungi</button>
         </form>
       </div>
+
+          <!-- PROVA COPIA DELL FORM INFOOOOOO!!!!!!!!!!!!!!!!!!!!!!!!!!! -->
 
     </div>
   </div>

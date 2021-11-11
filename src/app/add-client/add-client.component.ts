@@ -15,10 +15,20 @@ import { ProvinceService } from '../service/province.service';
 })
 export class AddClientComponent implements OnInit {
 
+  /*
+    In questo componente abbiamo messo logica per aggiungere clienti;
+        CHIAMATE PRESENTI:
+          -Chiamata per prendere array di comuni,
+          -Chiamata per prendere array di province,   -------------PRIMA ABBIAMO FATTO LA CHIAMATA DAGLI API NELL ClientService------------
+          -Chiamata per prendere array di Tipi Clienti
+          -Dati da aggiungere devo essere come nell API >>>>>>>> DA RIGA 32 A RIGA 72 (PER IL MOMENTO)
+  */
+
 
   comune: IComuni[] = [];
   province: Province[] = [];
   tipoClient: string[] = [];
+
   newClient: Clients = {
     ragioneSociale: "",
     partitaIva: "",
@@ -76,11 +86,7 @@ export class AddClientComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    // this.route.params.subscribe(params => {
-    //   if(params.id){
-    //     this.clientiService.getAllClient(params.id).subscribe(response => this.newClient = response)
-    //   }
-    // })
+
     this.getTipoClient();
     this.getProvince();
     this.getComuni();
@@ -91,7 +97,6 @@ export class AddClientComponent implements OnInit {
     this.clientiService.createClient(this.newClient)
       .subscribe(response => {
         this.newClient = response;
-        // response = response;
         // console.log(response);
         this.router.navigate(['client/list'])
       })

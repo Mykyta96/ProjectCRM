@@ -22,6 +22,19 @@ import { ActivatedRoute, Router } from '@angular/router';
 })
 export class FatureComponent implements OnInit {
 
+          /*
+                QUA FACCIAMO CHIAMATA DELLA LISTA DELLE FATURE DEI CLIENTI, PRIMA ABBIAMO FATTO LA CHIAMATA DEGLI API NEL FatureService
+                      METODI PRESENTI:
+                        -ELIMINIAMO FATTURE,
+                        -SELEZIONIAMO FATTURE,
+                    -----------------------------
+                      DA FINIRE DOPO CONSEGNA:
+                        -DOBBIAMO SELEZIONARE IL CLIENTE PER ID PER AGGIUNGERE O MODIFICARE LE SUE FATTURE
+                            BISOGNA CREARE UNA COMPONENTE A PARTE PER AGGIUNGERE LE FATTURE!!!
+          */
+
+
+
   fattureList: Fature[] = [];
   newFattura: Fature = {
 

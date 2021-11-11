@@ -6,6 +6,11 @@ import { ActivatedRouteSnapshot, CanActivate, RouterStateSnapshot } from '@angul
 })
 export class RouteGuardService implements CanActivate{
 
+  /*
+    PROTEZIONE DELLE ROTTE!
+
+  */
+
   login: boolean = false;
 
   constructor() { }

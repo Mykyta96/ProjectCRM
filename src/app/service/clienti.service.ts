@@ -12,6 +12,11 @@ import { Clients } from '../interface/clients';
 
 export class ClientiService {
 
+
+  /*
+      CHIAMATE PRESENTI SONO CHIAMATE PER ANDARE A PRENDERE I DATI DALL API
+  */
+
     bearerAuth = 'eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbiIsImlhdCI6MTYzNjM4NjQzOSwiZXhwIjoxNjM3MjUwNDM5fQ.OuX05eMBpDcZnUb3YUog3SDQRXZcpQgRSn28NpoieHVwt59wtHvMNbtEKoPDrqzKd5usp8-OUADRKIOfMAnspQ';
     urlApi = environment.urlApi + '/api/clienti?page=0&size=100&sort=id,DESC'
     headers = new HttpHeaders();

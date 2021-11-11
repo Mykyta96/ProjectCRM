@@ -10,7 +10,11 @@ import { RouteGuardService } from '../service/route-guard.service';
 })
 export class HeaderComponent implements OnInit {
 
-  constructor(private routeGuardService: RouteGuardService, private router: Router) { }//private routeGuardService: RouteGuardService, private router: Router
+  constructor(private routeGuardService: RouteGuardService, private router: Router) { }
+
+  /*
+      GESTIONE DELLE ROTTE GUARD, DOPO LOGOUT NON POSSIAMO PIU ENTRARE NELLE ALTRE PAGGINE
+  */
 
   ngOnInit(): void {
   }

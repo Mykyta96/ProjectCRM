@@ -12,6 +12,13 @@ import { Router } from '@angular/router';
 })
 export class ClientListComponent implements OnInit {
 
+          /*
+            NELL NG-ON-INIT FACCIAMO USCIRE LA LISTA DEI CLIENTI, PRIMA ABBIAMO FATTO LA CHIAMATA DAL API NEL ClientService
+                METODI PRESENTI:
+                  -SELEZIONIAMO CLIENTE PER ID,
+                  -ELIMINIAMO CLIENTE
+          */
+
 
 
   clientList: Clients[] = [];
