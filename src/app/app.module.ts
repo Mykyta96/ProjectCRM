@@ -25,7 +25,7 @@ const routes =[
   {path:'client/list', component: ClientListComponent, canActivate: [RouteGuardService] },
   {path:'client/add', component: AddClientComponent, canActivate: [RouteGuardService] },
   {path:'client/fature', component: FatureComponent, canActivate: [RouteGuardService] },
-  {path:'client/:id/fature', component: InfoFattureComponent, canActivate: [RouteGuardService] },
+  {path:'client/:id/fatture', component: InfoFattureComponent, canActivate: [RouteGuardService] },
   {path:'client/:id/info', component: InfoClientComponent, canActivate: [RouteGuardService] },
   {path:'client/contatti', component: ContattiComponent,canActivate: [RouteGuardService] },
   {path: 'login', component: LoginComponent}

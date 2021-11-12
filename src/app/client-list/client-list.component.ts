@@ -29,6 +29,7 @@ export class ClientListComponent implements OnInit {
 
   ngOnInit(): void {
     this.clientiService.getAllClient().subscribe(response => this.clientList = response.content)//
+
   }
 
 
@@ -44,6 +45,10 @@ export class ClientListComponent implements OnInit {
   selectUser(clientList: Clients): void{
     this.router.navigate(['client', clientList.id, 'info']);//item.id,
 }
+  selectFatture(clientList: Clients): void{
+    // this.clientiService.getFattura(id).subscribe(response => console.log(response))
+    this.router.navigate(['client', clientList.id, 'fatture']);//item.id,
+  }
 //!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!SELEZIONO USER
 
 

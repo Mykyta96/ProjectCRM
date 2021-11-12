@@ -26,9 +26,6 @@ getAllFatture(){
   return this.http.get<Content>(`${environment.urlApi}/api/fatture?page=0&size=100&sort=id,DESC`,{headers: this.headers});
 }
 
-getFattura(id: string){
-  return this.http.get<Fature>(`${environment.urlApi}/api/fatture/${id}`, {headers: this.headers});
-}
 
 createFattura(item: Fature){
   return this.http.post<Fature>(`${environment.urlApi}/api/fatture`, item, {headers: this.headers});

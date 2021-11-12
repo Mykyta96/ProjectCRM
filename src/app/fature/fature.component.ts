@@ -36,70 +36,70 @@ export class FatureComponent implements OnInit {
 
 
   fattureList: Fature[] = [];
-  newFattura: Fature = {
+  // newFattura: Fature = {
 
-      id: 0,
-      data: "",
-      numero: 0,
-      anno: 0,
-      importo: 0,
-      stato: {
-          id: 2,
-          nome: ""
-      },
-      cliente: {
-          id: 9,
-          ragioneSociale: "",
-          partitaIva: "",
-          tipoCliente: "SRL",
-          email: "",
-          pec: "",
-          telefono: "",
-          nomeContatto: "",
-          cognomeContatto: "",
-          telefonoContatto: "",
-          emailContatto: "",
-          indirizzoSedeOperativa: {
-            id: 0,
-            via: "",
-              civico: "",
-              cap: "",
-              localita: "",
-              comune: {
-                  id: 0,
-                  nome: "",
-                  provincia: {
-                      id: 0,
-                      nome: "",
-                      sigla: ""
-                  }
-              }
-          },
-          indirizzoSedeLegale: {
-              id: 0,
-              via: "",
-              civico: "",
-              cap: "",
-              localita: "",
-              comune: {
-                  id: 0,
-                  nome: "",
-                  provincia: {
-                      id: 0,
-                      nome: "",
-                      sigla: ""
-                  }
-              }
-          },
-          dataInserimento: "",
-          dataUltimoContatto: "",
-          fatturatoAnnuale: 0
+  //     id: 0,
+  //     data: "",
+  //     numero: 0,
+  //     anno: 0,
+  //     importo: 0,
+  //     stato: {
+  //         id: 2,
+  //         nome: ""
+  //     },
+  //     cliente: {
+  //         id: 9,
+  //         ragioneSociale: "",
+  //         partitaIva: "",
+  //         tipoCliente: "SRL",
+  //         email: "",
+  //         pec: "",
+  //         telefono: "",
+  //         nomeContatto: "",
+  //         cognomeContatto: "",
+  //         telefonoContatto: "",
+  //         emailContatto: "",
+  //         indirizzoSedeOperativa: {
+  //           id: 0,
+  //           via: "",
+  //             civico: "",
+  //             cap: "",
+  //             localita: "",
+  //             comune: {
+  //                 id: 0,
+  //                 nome: "",
+  //                 provincia: {
+  //                     id: 0,
+  //                     nome: "",
+  //                     sigla: ""
+  //                 }
+  //             }
+  //         },
+  //         indirizzoSedeLegale: {
+  //             id: 0,
+  //             via: "",
+  //             civico: "",
+  //             cap: "",
+  //             localita: "",
+  //             comune: {
+  //                 id: 0,
+  //                 nome: "",
+  //                 provincia: {
+  //                     id: 0,
+  //                     nome: "",
+  //                     sigla: ""
+  //                 }
+  //             }
+  //         },
+  //         dataInserimento: "",
+  //         dataUltimoContatto: "",
+  //         fatturatoAnnuale: 0
 
-  }
+  // }
 
 
 
-  }
+  // }
 
 
   constructor(private fatureService: FatureService, private router: Router, private route: ActivatedRoute) {
@@ -110,18 +110,16 @@ export class FatureComponent implements OnInit {
   ngOnInit(): void {
     this.fatureService.getAllFatture()
       .subscribe(response => this.fattureList = response.content)
-
-
   }
 
 
-  createFatture(){
-    this.fatureService.createFattura(this.newFattura)
-      .subscribe(response => {
-        this.newFattura = response;
-        console.log(response)
-      })
-  }
+  // createFatture(){
+  //   this.fatureService.createFattura(this.newFattura)
+  //     .subscribe(response => {
+  //       this.newFattura = response;
+  //       console.log(response)
+  //     })
+  // }
 
 
   removeFattura(id: any){
@@ -132,7 +130,7 @@ export class FatureComponent implements OnInit {
   }
 
   selectFatture(fattureList: Fature): void{
-    this.router.navigate(['client', fattureList.id, 'fature']);
+    this.router.navigate(['client', fattureList.id, 'fatture']);
 }
 
 

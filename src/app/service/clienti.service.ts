@@ -3,6 +3,8 @@ import { environment } from '../../environments/environment';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Clients } from '../interface/clients';
+import { Fature } from '../interface/fature';
+import { FatureNew } from '../interface/fature-new';
 
 //
 
@@ -39,6 +41,14 @@ export class ClientiService {
 
   getClient(id: string){
     return this.http.get<Clients>(`${environment.urlApi}/api/clienti/${id}`, {headers: this.headers});
+  }
+
+  getFattura(id: string){
+    return this.http.get<Fature>(`${environment.urlApi}/api/fatture/${id}`, {headers: this.headers});
+  }
+
+  createFattura(item: FatureNew){
+    return this.http.post<FatureNew>(`${environment.urlApi}/api/fatture/`, item, {headers: this.headers})
   }
 
   updateClient(item: Clients){
